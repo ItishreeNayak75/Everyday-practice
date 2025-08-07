@@ -1,17 +1,37 @@
+import java.util.Scanner;
+
 public class Array {
     public static void main(String[] args) {
-        // Declare and initialize an array of 10 integers
-        int[] numbers = new int[10];
+        Scanner sc = new Scanner(System.in);
 
-        // Populate the array with values using a for loop
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = i * 2; // store even numbers: 0, 2, 4, ...
+        // Step 1: Take array size input
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        // Step 2: Declare array
+        int[] arr = new int[n];
+
+        // Step 3: Input elements
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
         }
 
-        // Print the contents of the array using another loop
-        System.out.println("Array contents:");
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Element at index " + i + ": " + numbers[i]);
+        // Step 4: Calculate sum
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
         }
+
+        // Step 5: Display array elements
+        System.out.print("Array elements are: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        // Step 6: Print sum
+        System.out.println("\nSum of array elements = " + sum);
+
+        sc.close();
     }
 }
